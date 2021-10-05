@@ -6,6 +6,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+const (
+	host     = "localhost"
+	port     = 5432
+	user     = "postgres"
+	password = "your-password"
+	dbname   = "calhounio_demo"
+)
+
 type vehicle struct {
 	Make     string `json:"make"`
 	Model    string `json:"model"`
@@ -21,14 +29,6 @@ type vehicle struct {
 var vehicles = []vehicle{
 	{Make: "Ford", Model: "F-150"},
 	{Make: "Chevy", Model: "Silverado"},
-}
-
-func main() {
-
-	var router = gin.Default()
-	router.GET("/", getVehicles)
-	router.GET("/:id", getVehicleByID)
-	router.Run("localhost:8080")
 }
 
 func getVehicles(context *gin.Context) {
