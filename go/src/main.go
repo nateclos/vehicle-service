@@ -1,6 +1,7 @@
 package main
 
 import (
+	"dependencies/controllers"
 	"encoding/json"
 	"log"
 	"os"
@@ -19,14 +20,14 @@ func main() {
 	log.Println(config.Host)
 
 	var router = gin.Default()
-	router.GET("/", getVehicles)
-	router.GET("/:id", getVehicleByID)
+	router.GET("/", controllers.GetVehicles)
+	router.GET("/:id", controllers.GetVehicleByID)
 	router.Run(config.Host + config.Port)
 }
 
 func decodeConfig() Configuration {
 
-	confFile, err := os.Open("/app/config.json")
+	confFile, err := os.Open("/app/api-config.json")
 	if err != nil {
 		log.Println(err)
 	}

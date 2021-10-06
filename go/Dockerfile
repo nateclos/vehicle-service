@@ -12,8 +12,8 @@ RUN go mod download
 
 COPY src/*.go ./
 
-RUN go build -o /vehicle-service
+RUN go build -o /app/bin/vehicle-service
 
 EXPOSE 8080
 
-CMD [ "/vehicle-service" ]
+CMD [ "/app/bin/vehicle-service" ]
