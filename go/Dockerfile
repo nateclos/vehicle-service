@@ -2,6 +2,8 @@ FROM golang:bullseye
 
 WORKDIR /app
 
+COPY * ./
+
 COPY src/go.mod ./
 
 COPY src/go.sum ./
