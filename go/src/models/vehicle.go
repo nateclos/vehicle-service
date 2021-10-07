@@ -1,5 +1,6 @@
 package models
 
+// Struct representation of a vehicle.
 type Vehicle struct {
 	Make         string `json:"make"`
 	Model        string `json:"model"`
@@ -10,5 +11,5 @@ type Vehicle struct {
 	Mileage      int32  `json:"mileage"`
 	Price        int32  `json:"price"`
 	Id           string `json:"id"`
-	VehicleError error
+	VehicleError string `json:"error"`
 }

@@ -11,6 +11,9 @@ type APIConfiguration struct {
 	Port string `json:"port"`
 }
 
+/*
+ * Utility function for parsing api config on startup.
+ */
 func ParseAPIConfig() APIConfiguration {
 
 	confFile, err := os.Open("/app/api-config.json")
